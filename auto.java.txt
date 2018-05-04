@@ -1,0 +1,54 @@
+package AutoClass;
+// annrkee. Creating an Auto Class
+
+public class auto
+{
+	private String make;		// automobile manufacturer
+	private String model;		// automobile type
+	private int year;			// year auto was built
+	private double miles;		// number of miles driven by auto
+	private double speed;		// speed of auto in miles per hour
+	
+	public auto (String mk, String md, int y)
+	{
+		make = mk;
+		model = md;
+		year = y;
+		miles = 0;
+		speed = 0;	
+	} 
+	// methods being declared
+	public void setSpeed(double s)	// set method for speed
+	{
+		speed = s;
+	}
+	// get method for speed
+	public double getSpeed()
+	{
+		return speed;
+	}
+	// get method for miles
+	public double getMiles()
+	{
+		return miles;
+	}
+	// method to display attributes of auto object
+	public String toString()
+	{
+		String temp = "Make:\t\t\t" +make+ "\nModel:\t\t\t" +model+ // the "temp" is a local variable.
+				"\nYear:\t\t\t" +year+ "\nMileage:\t\t" +miles;		// it is only part of this method.
+		return temp;
+	}
+	// method to calculate distance of a drive based on auto's speed
+	// and time driven in hours, as indicated by user of method
+	public double driveDistance(double h)
+	{
+		return speed * h;
+	}
+	// method to update miles driven on auto after a drive
+	public void adjustMiles(double m)
+	{
+		miles += m;
+	} // end of methods declared
+}
+
