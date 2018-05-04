@@ -1,0 +1,77 @@
+package lab;
+
+public class funWS
+{
+	public static void main(String[] args)
+	{
+		int[] numArray = {27,30,15,73,9,11,41,62,57,3};
+		
+		print(numArray);
+		sort(numArray);
+		print(numArray);
+	}// end main
+	
+	public static void print(int[]n)
+	//TASK: Displays an array
+	{
+		for (int i = 0; i < n.length; i++)
+			System.out.print (n[i] + " ");
+			System.out.println();
+	}// print
+	
+	public static void sort(int[]n)
+	//TASK: Sorts an array
+	/*{
+		int iterates = 0;
+		int comps = 0;
+		int swaps = 0;
+		
+		int max, temp;
+		for (int i = n.length-1; i >0; i--)
+		{
+			iterates++;
+			max = 0;
+			for(int j=1; j <= i; j++)
+			{
+				iterates++;
+				comps++;
+				if(n[j] > n[max])
+					max = j;
+			}
+			swaps++;
+			temp = n[max];
+			n[max] = n[i];
+			n[i] = temp;
+			System.out.println("first it: " +iterates);
+			System.out.println("comp: " +comps);
+			System.out.println("SwappySwap: " +swaps);
+		}
+	}// end of sorting method     	*/
+	
+	{// insertion sort
+		int iterates = 0;
+		int comps = 0;
+		int swaps = 0;
+		
+		for (int i = 1; i <n.length; i++)
+		{
+			iterates++;
+
+			int temp = n[i];
+			int j = i -1;
+			comps++;
+			while ((j >= 0) && (temp < n[j]))
+			{
+				iterates++;
+				comps++;
+				n[j+1] = n[j];
+				j--;
+			}
+			swaps++;
+			n[j+1] = temp;
+		}
+		System.out.println("first it: " +iterates);
+		System.out.println("comp: " +comps);
+		System.out.println("SwappySwap: " +swaps);
+	}
+}// end Fun
