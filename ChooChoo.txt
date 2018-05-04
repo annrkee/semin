@@ -1,0 +1,23 @@
+//Using Parallel Arrays.
+package lab;
+import java.util.Scanner;
+public class choochoo
+{
+	public static void main(String[]args)
+	{
+		Scanner getIn = new Scanner(System.in);
+		
+		//setting strings
+		String [] train = {"B30, G21, R32, Z53, M84"};
+		String [] origin = {"Bensonhurst, Red Hook, Brighton Beach, Rockaway Park, Sheepshead Bay"};
+		String [] destination = {"Flushing, Flatbush, Bushwick, Jackson Heights, Forest Hills"};
+		String [] departureTime = {"08:45, 10:15, 13:35, 14:40, 16:20"};
+
+		System.out.print("Enter a train number from 1-4: ");
+		int x = getIn.nextInt();
+		
+		System.out.println("The train number is: "+(train[x]));
+		
+		getIn.close();
+	}
+}
