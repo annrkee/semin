@@ -1,0 +1,102 @@
+package lab;
+
+import java.util.Random;
+import java.util.Scanner;
+// annrkee.
+
+public class BinarySearch
+{
+	public static void main(String [] args)
+	{
+		//instantiate a Random object for an integer array
+		Random pick = new Random();
+		
+		//instantiate a Scanner object for user input
+		Scanner scan = new Scanner(System.in);
+		
+		//declare an array of 50 integers
+		int [] numbers = new int[50];
+		
+		//use a loop and Random object to fill integer array
+		//with value in a possible range of 1-100
+		for(int i = 0; i<numbers.length; i++)
+			numbers[i] = pick.nextInt(100) + 1;
+		
+		//display the contents of the unsorted integer array
+		display(numbers);
+		
+		//sorts the array
+		sort(numbers);
+		display(numbers);
+		
+		//identify and find the lcoation of a value in the array
+		System.out.println("Enter a value to find: ");
+		int what = scan.nextInt();
+		
+		//find value in array of integers
+		int where = search(numbers, what);
+		
+		//display results of search
+		if (where == -1)
+			System.out.println("Value is not in the array!!!!!!");
+		else
+			System.out.println("Value be in the array! Location: " + where);
+		scan.close();
+	}
+	public static void sort(int a[])
+	{// insertion sort
+			int iterates = 0;
+			int comps = 0;
+			int swaps = 0;
+			
+			for (int i = 1; i <a.length; i++)
+			{
+				iterates++;
+
+				int temp = a[i];
+				int j = i -1;
+				comps++;
+				while ((j >= 0) && (temp < a[j]))
+				{
+					iterates++;
+					comps++;
+					a[j+1] = a[j];
+					j--;
+				}
+				swaps++;
+				a[j+1] = temp;
+			}
+			System.out.println("first it: " +iterates);
+			System.out.println("comp: " +comps);
+			System.out.println("SwappySwap: " +swaps);		
+	}//sorting technique used
+	
+	public static int search(int a[], int key)
+	{
+		int start = 0, end = a.length -1, mid, spot= -1;
+		boolean found = false;
+		while ((end>= start)&& !(found))
+		{
+			mid = (start + end) / 2;
+			System.out.println(mid);
+			if (a[mid] == key)
+			{
+				found = true;
+				spot = mid;
+			}
+			else if (a[mid] > key)
+				end = mid -1;
+			else
+				start = mid + 1;
+		}
+		return spot;
+	}//temporary return value
+
+	
+	public static void display(int a[])
+	{
+		for(int i =0; i < a.length; i++)
+			System.out.print(a[i] + " ");
+		System.out.println();
+	}
+}
