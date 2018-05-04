@@ -5,7 +5,7 @@ public class auto
 {
 	private String make;		// automobile manufacturer
 	private String model;		// automobile type
-	private int year;			// year auto was built
+	private int year;		// year auto was built
 	private double miles;		// number of miles driven by auto
 	private double speed;		// speed of auto in miles per hour
 	
