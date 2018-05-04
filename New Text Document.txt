@@ -1,0 +1,47 @@
+#annrkee. Lab 22 over sections 7.1 and 7.2
+#Open the file for retrieving data
+inFile = open("studentgrades.txt", "r")
+
+#Read an initial line of text from file
+#Data will be in format: name grade1 grade2 grade3
+line = inFile.readline()
+
+#Continue as long as line from file is not blank
+while line != "":
+
+    #data values in line are separated by spaces
+    #Create list by splitting line apart using spaces
+    list = line.split()
+
+    #Student name is first item in the list
+    name = list[0]
+
+    #Iitialize total points to 0
+    total = 0
+
+    #Start score counter at 1; same as 1st position in list
+    count = 1
+
+    #Examine the three scores for the student from the list
+    while (count <= 3):
+
+        #Get score from list as integer
+        score = int(list[count])
+
+        #Add score to total
+        total = total + score
+
+        #Increment counter to indicate one test has been read
+        count = count + 1
+
+    #Detemine average of 3 test scores
+    avg = total // 3
+
+    #DIsplay student name and test score average
+    print(name + ": " + str(avg))
+
+    #Read the next line in file
+    line = inFile.readline()
+
+#Close the file
+inFile.close()
