@@ -1,0 +1,29 @@
+# annrkee.
+# Assist in the practice of
+# processing data from text files.
+
+# Opens the input file
+infile = open("myfile.txt", "r")
+
+# this implements the counter
+wordcount = 0
+
+
+# for loop to read the file and then strip it to remove punctuation and count
+# the total amount of words
+line = infile.readline()
+
+while line !="":
+    wordList = line.split()
+    print(wordList)
+    word = len(wordList)
+    #This is the counter
+    wordcount = wordcount + word
+    line = infile.readline()
+
+# This will print the wordcount    
+print(wordcount)
+#Close the files.
+infile.close()
+
+
