@@ -1,0 +1,65 @@
+#annrkee
+#Rock Paper Scissors Homework. Program 2.
+#This is an explanation for the user to understand what the program is about.
+#This will state that they will be able to choose rock, paper or scissors.
+
+from random import randint
+#Informing the user of what will happen.
+print("This is a Rock, Paper, Scissors program where you will be playing " +\
+      "against the computer. This will be the best of three vs the computer." +\
+      "To enter rock, paper or scissors, you will have to enter an integer " +\
+      "as representation.")
+print()
+
+cScore = 0#Sets the computer score to 0
+uScore = 0#Sets the user score to 0
+while uScore < 3 and cScore <3:#Sets both to no more than 3 wins.
+    comp = randint(1,3)#This is the computer choosing a random number.
+    user = int(input("Choose 1 for Rock, 2 for Paper or 3 for Scissors: "))
+    if (comp == user):#This will now compare the user and computers score.
+        print("The computer chose", comp, "so A TIE! ")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 1 and user == 3):
+        cScore +=1
+        print("The Computer Wins", comp, ",and won. :(")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 2 and user == 1):
+        cScore +=1
+        print("The Computer Wins", comp, "and won. :(")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 3 and user == 2):
+        cScore +=1
+        print("The Computer Wins", comp, "and won. :( ")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 3 and user == 1):
+        uScore +=1
+        print("The computer chose", comp, "and You Won. :)")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 2 and user == 3):
+        uScore +=1
+        print("The computer chose", comp, "and You Won. :)")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    elif (comp == 1 and user == 2):
+        uScore +=1
+        print("The computer chose", comp, "and You Won. :)")
+        print("Computer Score: ", cScore)
+        print("User Score: ", uScore)
+        print()
+    else:#Making sure the user input is correct.
+        print("Please enter a valid input!")
+if (cScore == 3):#This checks the score, whomever has 3, wins.
+    print("The computer won the game.")
+else:
+    print("You won, yay!")
