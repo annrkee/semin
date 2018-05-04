@@ -1,0 +1,48 @@
+package AutoClass;
+// annrkee. Creating an Auto Class
+
+public class AutoDemo
+{ // begin of class
+	public static void main (String[] args)
+	{// begin of main 
+	// create an instance of a new auto object
+	auto theCar = new auto ("Ford" , "Focus" , 2007);
+	
+	// display the attributes of the new object
+	System.out.println(theCar);
+	
+	// set the speed of the new auto to
+	// maximum legal speed limit on the interstate
+	theCar.setSpeed(70);
+	
+	// check speed
+	double mySpeed = theCar.getSpeed();
+	System.out.println("Cruise control set at:\t" +mySpeed+ " mph.");
+	
+	// drive for 2 hours, then note mileage
+	double myTrip = theCar.driveDistance(2);
+	theCar.adjustMiles(myTrip);
+	System.out.println("New odometer reading:\t" +theCar.getMiles());
+	
+	// do another trip at a slightly slower speed
+	theCar.setSpeed(68.4);
+	myTrip = theCar.driveDistance(4.4);
+	theCar.adjustMiles(myTrip);
+	System.out.println("Distance of trip:\t"+myTrip+ " miles.");
+	System.out.println("New odometer reading:\t" +theCar.getMiles()+ " traveled");
+	
+	// do yet another trip through a residential area
+	theCar.setSpeed(34.9);
+	myTrip = theCar.driveDistance(0.5);
+	theCar.adjustMiles(myTrip);
+	System.out.println("Distance of trip:\t"+myTrip);
+	System.out.println("New odometer reading:\t" +theCar.getMiles());
+	
+	// stop car
+	theCar.setSpeed(0);
+	
+	// check final results of traveling
+	System.out.println(theCar);
+	}// end of main 
+} // close of class
+
