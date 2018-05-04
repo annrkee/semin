@@ -1,0 +1,39 @@
+// annrkee. Linear Search with Spanish words.
+package LinearSearch;
+import java.util.Scanner;
+public class linearSearch
+{
+	public static void main(String[]args)
+	{
+		Scanner scan = new Scanner(System.in);
+
+		//	array of English and Spanish words
+		String [] english = {"dog","cat","banana","car","firefighter","cheese",
+							"door","chair","question","scary clown"};
+		String [] spanish = {"el perro","el gato","el planto","el coche","el bomber","el queso",
+							"la puerta","la silla","la pregunta","el payaso asustado"};		
+		System.out.println( "Please choose one of the following English words to find the corresponding Spanish word:\n"
+				+ "Dog, Cat, Banana, Car, Firefighter, Cheese, Door, Chair, Question, Scary Clown");	
+		String choice = scan.nextLine().toLowerCase();
+		System.out.println(linearSearchysearch(english, spanish, choice)); //	printing result
+		scan.close();
+	}
+	public static String linearSearchysearch(String e[], String s[], String key) // creating the actual search class
+	{// linear search
+		boolean found = false;	// initiates the boolean as false first for an easier search
+		int index = 0; 
+		while ((index<e.length)&& !(found))
+		{
+			if (e[index].equals (key))
+			{
+				found = true;
+				return s[index];
+			}
+			else
+			{
+				System.out.println("Not in there yo!");
+			}
+			index++;
+		} return "";
+	}// end of linear search
+}
