@@ -1,5 +1,5 @@
 #annrkee
-#Rock Paper Scissors Homework. Program 2.
+#Rock Paper Scissors Homework.
 #This is an explanation for the user to understand what the program is about.
 #This will state that they will be able to choose rock, paper or scissors.
 
